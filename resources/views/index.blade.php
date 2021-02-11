@@ -3,17 +3,16 @@
 @section('body')
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex align-items-center">
-
         <div class="container">
             <div class="row">
                 <div class="col-lg-7 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
                      data-aos="fade-up" data-aos-delay="200">
-                    <h1>The best training in KTown.</h1>
-                    <h2>We are a group of professional trainers ready to tailor your training needs.</h2>\
+                    <h1>The best place to train in KTown.</h1>
+                    <h2>We are a group of professional trainers ready to tailor your fitness training needs.</h2>\
                     <div class="d-lg-flex">
-                        <a href="{{ route('register') }}" class="btn-get-started scrollto"><i class="icofont-gym-alt-2"
-                                                                                              style=" font-size: 1.5em;"></i>
-                            TRAIN WITH US</a>
+                        <a href="{{ route('register') }}" class="btn-get-started scrollto"> <strong>TRAIN</strong> WITH
+                            US <i class="icofont-dumbbell"
+                                  style=" font-size: 1.5em;"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
@@ -92,13 +91,12 @@
 
         <!-- ======= Schedules Section ======= -->
         <section class="why-us section-bg">
-            <div class="container-fluid" data-aos="fade-up">
+            <div class="container" data-aos="fade-up">
                 <div class="row">
                     <div
                         class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
-
                         <div class="content">
-                            <h3>TIME TO <strong>TRAIN</strong></h3>
+                            <h3><strong>TIME</strong> TO TRAIN</h3>
                             <p>
                                 The best way to train is to train in schedule. So that you dont ever remain behind on
                                 training schedule, we have developed some training schedules you can choose.
@@ -106,90 +104,126 @@
                         </div>
                         <div class="d-lg-flex content">
                             <a href="{{ route('schedules') }}" class="custom-button"><i
-                                    class="icofont-clock-time"></i>
-                                BROWSE SCHEDULES</a>
+                                    class="icofont-clock-time" style=" font-size: 1.5em;"></i>
+                                BROWSE <strong>SCHEDULES</strong></a>
                         </div>
                     </div>
-
                     <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img"
-                         style='background-image: url("assets/img/why-us.png");' data-aos="zoom-in"
+                         style='background-image: url("assets/img/time-to-train.svg");' data-aos="zoom-in"
                          data-aos-delay="150">&nbsp;
                     </div>
                 </div>
 
             </div>
         </section><!-- End Schedules Section -->
-        <!-- ======= Skills Section ======= -->
 
-        <section id="skills" class="skills">
+        <!-- ======= Packages Section ======= -->
+        <section class="why-us">
             <div class="container" data-aos="fade-up">
-
                 <div class="row">
-                    <div class="col-lg-6 d-flex align-items-center" data-aos="fade-right" data-aos-delay="100">
-                        <img src="assets/img/skills.png" class="img-fluid" alt="">
+                    <div class="col-lg-5 align-items-stretch order-2 order-lg-1 img"
+                         style='background-image: url("assets/img/skills.png");' data-aos="zoom-in"
+                         data-aos-delay="150">&nbsp;
                     </div>
-                    <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
-                        <h3>Voluptatem dignissimos provident quasi corporis voluptates</h3>
-                        <p class="font-italic">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore
-                            magna aliqua.
-                        </p>
+                    <div
+                        class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-1 order-lg-2">
+                        <div class="content">
+                            <h3>FIND <strong>THE BEST TRAINING</strong> FOR YOU</h3>
+                            <p>
+                                We provide variations in the type of trainings we provide. The best training for you
+                                might depend upon your fitness goal. Out of all the trainees currently associated with
+                                us, they have choosen following packages the most.
+                            </p>
+                        </div>
+                        <div class="d-lg-flex content skills">
+                            <div class="skills-content container">
+                                <div class="progress">
+                                    <span class="skill">Cardio<i class="val">20%</i></span>
+                                    <div class="progress-bar-wrap">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="20"
+                                             aria-valuemin="0"
+                                             aria-valuemax="100"></div>
+                                    </div>
+                                </div>
 
-                        <div class="skills-content">
+                                <div class="progress">
+                                    <span class="skill">Gym <i class="val">40%</i></span>
+                                    <div class="progress-bar-wrap">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="40"
+                                             aria-valuemin="0"
+                                             aria-valuemax="100"></div>
+                                    </div>
+                                </div>
 
-                            <div class="progress">
-                                <span class="skill">HTML <i class="val">100%</i></span>
-                                <div class="progress-bar-wrap">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0"
-                                         aria-valuemax="100"></div>
+                                <div class="progress">
+                                    <span class="skill">Cardio + Gym <i class="val">10%</i></span>
+                                    <div class="progress-bar-wrap">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="10"
+                                             aria-valuemin="0"
+                                             aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+
+                                <div class="progress">
+                                    <span class="skill">Zumba<i class="val">30%</i></span>
+                                    <div class="progress-bar-wrap">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="30"
+                                             aria-valuemin="0"
+                                             aria-valuemax="100"></div>
+                                    </div>
                                 </div>
                             </div>
-
-                            <div class="progress">
-                                <span class="skill">CSS <i class="val">90%</i></span>
-                                <div class="progress-bar-wrap">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
-                                         aria-valuemax="100"></div>
-                                </div>
-                            </div>
-
-                            <div class="progress">
-                                <span class="skill">JavaScript <i class="val">75%</i></span>
-                                <div class="progress-bar-wrap">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0"
-                                         aria-valuemax="100"></div>
-                                </div>
-                            </div>
-
-                            <div class="progress">
-                                <span class="skill">Photoshop <i class="val">55%</i></span>
-                                <div class="progress-bar-wrap">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0"
-                                         aria-valuemax="100"></div>
-                                </div>
-                            </div>
-
+                        </div>
+                        <div class="row content">
+                            <a href="{{ route('packages') }}" class="custom-button"><i class="icofont-box"
+                                                                                       style=" font-size: 1.5em;"></i>
+                                BROWSE <strong>PACKAGES</strong></a>
                         </div>
 
                     </div>
                 </div>
 
             </div>
-        </section><!-- End Skills Section -->
+        </section><!-- End Packages Section -->
+
+        <!-- ======= Trainers Section ======= -->
+        <section class="why-us section-bg">
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <div
+                        class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
+                        <div class="content">
+                            <h3>TRAIN WITH <strong>THE BEST</strong></h3>
+                            <p>
+                                Trainers who have built a name for themselves are proudly associated with GymJankari.
+                                Dont forget to check who you train with.
+                            </p>
+                        </div>
+                        <div class="d-lg-flex content">
+                            <a href="{{ route('trainers') }}" class="custom-button"><i
+                                    class="icofont-gym-alt-2" style=" font-size: 1.5em;"></i>
+                                BROWSE <strong>TRAINERS</strong></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img"
+                         style='background-image: url("assets/img/trainers.svg");' data-aos="zoom-in"
+                         data-aos-delay="150">&nbsp;
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End Trainers Section -->
+
         <!-- ======= Cta Section ======= -->
         <section id="cta" class="cta">
             <div class="container" data-aos="zoom-in">
-
                 <div class="row">
                     <div class="col-lg-9 text-center text-lg-left">
-                        <h3>Call To Action</h3>
-                        <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                            mollit anim id est laborum.</p>
+                        <h3 style="font-weight: 400;">START <strong>TRAINING</strong> TODAY</h3>
+                        <p>This is the long awaited time to join a gym. Start training with us today by signing up.</p>
                     </div>
                     <div class="col-lg-3 cta-btn-container text-center">
-                        <a class="cta-btn align-middle" href="#">Call To Action</a>
+                        <a class="cta-btn align-middle" href="{{ route('register') }}">Sign Up</a>
                     </div>
                 </div>
 
@@ -197,98 +231,38 @@
         </section><!-- End Cta Section -->
 
 
+        <!-- ======= Contact Section ======= -->
+        <section class="why-us">
+            <div class="container-fluid" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-lg-5 align-items-stretch order-2 order-lg-1 img content"
+                         data-aos="zoom-in"
+                         data-aos-delay="150">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.3793443817704!2d85.33221635112764!3d27.705571532091376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19a000ac6259%3A0x9d9f16732861e650!2sMaitidevi%20Temple!5e0!3m2!1sen!2snp!4v1613062712692!5m2!1sen!2snp"
+                            width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""
+                            aria-hidden="false" tabindex="0"></iframe>
 
+                    </div>
+                    <div
+                        class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-1 order-lg-2">
+                        <div class="content">
+                            <h3>KNOW <strong>WHERE</strong> YOU TRAIN</h3>
+                            <p>
+                                To start training you have to start at our Gym Location. You can also see more about contacting
+                                us.
+                            </p>
+                        </div>
+                        <div class="row content">
+                            <a href="{{ route('contact') }}" class="custom-button"><i class="icofont-box"
+                                                                                       style=" font-size: 1.5em;"></i>
+                                <strong>CONTACT</strong> US</a>
+                        </div>
 
-
-        <!-- ======= Frequently Asked Questions Section ======= -->
-        <section id="faq" class="faq section-bg">
-            <div class="container" data-aos="fade-up">
-
-                <div class="section-title">
-                    <h2>Frequently Asked Questions</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
-                        sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-                        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-                </div>
-
-                <div class="faq-list">
-                    <ul>
-                        <li data-aos="fade-up" data-aos-delay="100">
-                            <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" class="collapse"
-                                                                           href="#faq-list-1">Non consectetur a erat nam
-                                at lectus urna duis? <i class="bx bx-chevron-down icon-show"></i><i
-                                    class="bx bx-chevron-up icon-close"></i></a>
-                            <div id="faq-list-1" class="collapse show" data-parent=".faq-list">
-                                <p>
-                                    Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet
-                                    non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor
-                                    purus non.
-                                </p>
-                            </div>
-                        </li>
-
-                        <li data-aos="fade-up" data-aos-delay="200">
-                            <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-2"
-                                                                           class="collapsed">Feugiat scelerisque varius
-                                morbi enim nunc? <i class="bx bx-chevron-down icon-show"></i><i
-                                    class="bx bx-chevron-up icon-close"></i></a>
-                            <div id="faq-list-2" class="collapse" data-parent=".faq-list">
-                                <p>
-                                    Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum
-                                    velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend
-                                    donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in
-                                    cursus turpis massa tincidunt dui.
-                                </p>
-                            </div>
-                        </li>
-
-                        <li data-aos="fade-up" data-aos-delay="300">
-                            <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-3"
-                                                                           class="collapsed">Dolor sit amet consectetur
-                                adipiscing elit? <i class="bx bx-chevron-down icon-show"></i><i
-                                    class="bx bx-chevron-up icon-close"></i></a>
-                            <div id="faq-list-3" class="collapse" data-parent=".faq-list">
-                                <p>
-                                    Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus
-                                    pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit.
-                                    Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis
-                                    tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
-                                </p>
-                            </div>
-                        </li>
-
-                        <li data-aos="fade-up" data-aos-delay="400">
-                            <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-4"
-                                                                           class="collapsed">Tempus quam pellentesque
-                                nec nam aliquam sem et tortor consequat? <i class="bx bx-chevron-down icon-show"></i><i
-                                    class="bx bx-chevron-up icon-close"></i></a>
-                            <div id="faq-list-4" class="collapse" data-parent=".faq-list">
-                                <p>
-                                    Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in
-                                    est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl
-                                    suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in.
-                                </p>
-                            </div>
-                        </li>
-
-                        <li data-aos="fade-up" data-aos-delay="500">
-                            <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-5"
-                                                                           class="collapsed">Tortor vitae purus faucibus
-                                ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? <i
-                                    class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                            <div id="faq-list-5" class="collapse" data-parent=".faq-list">
-                                <p>
-                                    Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo
-                                    integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc
-                                    eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque.
-                                </p>
-                            </div>
-                        </li>
-
-                    </ul>
+                    </div>
                 </div>
 
             </div>
-        </section><!-- End Frequently Asked Questions Section -->
+        </section>
     </main><!-- End #main -->
 @endsection

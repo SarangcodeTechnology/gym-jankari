@@ -83,7 +83,7 @@
         @if(!Auth::check())
         <div>
         <a href="{{ route('login') }}" class="get-started-btn scrollto">Login</a>
-        <a href="{{ route('register') }}" class="get-started-btn scrollto ml-1">Register</a>
+        <a href="{{ route('register') }}" class="get-started-btn scrollto ml-1">Sign Up</a>
         </div>
 
         @endif
