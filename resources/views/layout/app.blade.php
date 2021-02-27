@@ -28,7 +28,7 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="assets/css/custom.css" rel="stylesheet">
-
+  <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -65,11 +65,15 @@
                 <li><a href="#">Drop Down 4</a></li>
               </ul>
             </li> --}}
-            @if(Auth::check())
+            @if(Auth::check() || Auth::guard('trainer')->check())
             <li class="drop-down">
+                @if(Auth::user())
                 <a href="#">{{ Auth::user()->name }}</a>
+                @elseif(Auth::guard('trainer')->check())
+                <a href="#">{{ Auth::guard('trainer')->user()->name }}</a>
+                @endif
                 <ul>
-                    <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                    <li><a href="{{ !Auth::guard('trainer')->check() ? route('dashboard') : route('trainer.dashboard') }}">Dashboard</a></li>
                     <li><a href="#" onclick="document.getElementById('logout').submit()">Logout</a></li>
                     <form action="{{ route('logout') }}" id="logout" method="post">
                       @csrf
@@ -77,10 +81,9 @@
               </ul>
             </li>
             @endif
-
           </ul>
         </nav><!-- .nav-menu -->
-        @if(!Auth::check())
+        @if(!Auth::check() && !Auth::guard('trainer')->check())
         <div>
         <a href="{{ route('login') }}" class="get-started-btn scrollto">Login</a>
         <a href="{{ route('register') }}" class="get-started-btn scrollto ml-1">Register</a>
@@ -144,7 +147,9 @@
   <script src="assets/vendor/venobox/venobox.min.js"></script>
   <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
+  <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
 
+  @yield('script')
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
     @if(!Request::segment(1))

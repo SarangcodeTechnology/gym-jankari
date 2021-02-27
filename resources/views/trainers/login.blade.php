@@ -5,15 +5,10 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">
-                        <div class="d-flex justify-content-between">
-                            <span>{{ __('Login') }}</span>
-                            <span><a href="{{ route('trainer.login') }}">Login as Trainer</a></span>
-                        </div>
-                    </div>
+                    <div class="card-header">{{ __('Trainer Login') }}</div>
     
                     <div class="card-body">
-                        <form method="POST" action="{{ route('login') }}">
+                        <form method="POST" action="{{ route('trainer.login') }}">
                             @csrf
     
                             <div class="form-group row">

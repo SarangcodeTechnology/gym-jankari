@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('body')
-<div class="container">
+<div class="container mb-4">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -24,6 +24,108 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="name" autofocus>
+
+                                @error('address')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="contact" class="col-md-4 col-form-label text-md-right">{{ __('Contact') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="contact" type="text" class="form-control @error('contact') is-invalid @enderror" name="contact" value="{{ old('contact') }}" required autocomplete="name" autofocus>
+
+                                @error('contact')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="emergency_contact" class="col-md-4 col-form-label text-md-right">{{ __('Emergency Contact') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="emergency_contact" type="text" class="form-control @error('emergency_contact') is-invalid @enderror" name="emergency_contact" value="{{ old('emergency_contact') }}" required autocomplete="name" autofocus>
+
+                                @error('emergency_contact')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="health_condition" class="col-md-4 col-form-label text-md-right">{{ __('Health Condition') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="health_condition" type="text" class="form-control @error('health_condition') is-invalid @enderror" name="health_condition" value="{{ old('health_condition') }}" required autocomplete="name" autofocus>
+
+                                @error('health_condition')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="gender" class="col-md-4 col-form-label text-md-right">{{ __('Gender') }}</label>
+
+                            <div class="col-md-6">
+                                <select class="form-control" id="gender" name="gender">
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                    <option>Other</option>
+                                </select>
+
+                                @error('gender')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="package" class="col-md-4 col-form-label text-md-right">{{ __('Package') }}</label>
+
+                            <div class="col-md-6">
+                                <select class="form-control" id="package" name="package_id">
+                                    <option selected value="-1">Select</option>
+                                    @foreach (\App\Package::all() as $item)
+                                        <option value="{{ $item->id }}">{{ $item->title }}</option>
+                                    @endforeach
+                                </select>
+
+                                @error('package')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        {{-- <div class="form-group row">
+                            <label for="schedule" class="col-md-4 col-form-label text-md-right">{{ __('Schedule') }}</label>
+
+                            <div class="col-md-6">
+                                <select class="form-control" id="schedule" name="schedule_id">
+                                    <option>-</option>
+                                </select>
+
+                                @error('schedule')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div> --}}
 
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
@@ -32,6 +134,20 @@
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="dob" class="col-md-4 col-form-label text-md-right">{{ __('Date of Birth') }}</label>
+
+                            <div class="col-md-6">
+                                <input type="date" class="form-control @error('dob') is-invalid @enderror" name="dob" value="{{ old('dob') }}" required autocomplete="dob">
+
+                                @error('dob')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -74,4 +190,23 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('script')
+    <script>
+        $('#datepicker').datepicker({
+            uiLibrary: 'bootstrap4'
+        });
+        
+        $('#package').change(function(){
+            $('#schedule').empty();
+            @foreach(\App\Schedule::all() as $item)
+                @php $day=ucfirst($item->day); @endphp
+                if($(this).val() =='{{ $item->package_id }}')
+                {
+                    $('#schedule').append('<option value="{{ $item->id }}">{{ $day }} ({{ date("g:ia", strtotime($item->from)).'-'.date("g:ia", strtotime($item->to)) }})</option>')
+                }
+            @endforeach
+        })
+    </script>
 @endsection

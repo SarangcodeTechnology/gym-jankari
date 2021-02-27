@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AttendanceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,10 +18,17 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::post('/updateAttendance',[AttendanceController::class,'update']);
+
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+// trainer-login
+Route::get('/trainer-login',[App\Http\Controllers\TrainerAuth\LoginController::class, 'showLoginForm'])->name('trainer.login');
+Route::post('/trainer-login', [App\Http\Controllers\TrainerAuth\LoginController::class, 'login'])->name('trainer.login');
+Route::get('/trainer-dashboard', [App\Http\Controllers\TrainerAuth\DashboardController::class, 'index'])->name('trainer.dashboard');
 
 Auth::routes();
 
