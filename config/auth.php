@@ -40,6 +40,10 @@ return [
             'driver' => 'session',
             'provider' => 'admin',
         ],
+        'trainer' => [
+            'driver' => 'session',
+            'provider' => 'trainer'
+        ],
 
         'web' => [
             'driver' => 'session',
@@ -71,6 +75,10 @@ return [
     */
 
     'providers' => [
+        'trainer'=>[
+            'driver' => 'eloquent',
+            'model' => App\Trainer::class,
+        ],
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
