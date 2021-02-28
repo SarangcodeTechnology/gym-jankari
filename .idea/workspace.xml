@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f332a721-70a9-4c58-8436-aaba54ce4cdc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/app.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,8 +168,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/public/assets/img" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -200,7 +205,8 @@
       <workItem from="1613655991967" duration="7000" />
       <workItem from="1614075444142" duration="1389000" />
       <workItem from="1614495876903" duration="373000" />
-      <workItem from="1614496259621" duration="150000" />
+      <workItem from="1614496259621" duration="5018000" />
+      <workItem from="1614507315352" duration="57000" />
     </task>
     <task id="LOCAL-00001" summary="New Pages created">
       <created>1613049161836</created>
@@ -223,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614075472333</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="merge changes">
+      <created>1614496436353</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1614496436353</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,6 +258,7 @@
     <MESSAGE value="New Pages created" />
     <MESSAGE value="Home page framework completed." />
     <MESSAGE value="lets merge" />
-    <option name="LAST_COMMIT_MESSAGE" value="lets merge" />
+    <MESSAGE value="merge changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="merge changes" />
   </component>
 </project>
