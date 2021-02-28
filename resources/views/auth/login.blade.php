@@ -5,18 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-<<<<<<< HEAD
-                    <div class="card-header">
-                        <div class="d-flex justify-content-between">
-                            <span>{{ __('Login') }}</span>
-                            <span><a href="{{ route('trainer.login') }}">Login as Trainer</a></span>
-                        </div>
-                    </div>
-    
-=======
                     <div class="card-header">{{ __('Login') }}</div>
-
->>>>>>> 03ef30414f80fec56ede2a1377f0dd4cf7602aeb
                     <div class="card-body">
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
