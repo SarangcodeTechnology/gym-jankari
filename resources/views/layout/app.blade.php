@@ -141,8 +141,9 @@
 
 
 <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
+@if(Request::segment(1)!='dashboard')
 <div id="preloader"></div>
-
+@endif
 <!-- Vendor JS Files -->
 <script src="assets/vendor/jquery/jquery.min.js"></script>
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

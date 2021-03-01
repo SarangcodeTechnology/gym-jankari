@@ -50,7 +50,10 @@
                         @if(!request('edit'))
                         <a href="?edit=1" class="btn btn-primary">Edit</a>
                         @else
-                        <button class="btn btn-success" type="submit">Save</button>
+                        <div>
+                            <button class="btn btn-primary" onclick="window.history.back();">Back</button>
+                            <button class="btn btn-success" type="submit">Save</button>
+                        </div>
                         @endif
                     </div>
                         @csrf
