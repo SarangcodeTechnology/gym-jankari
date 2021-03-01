@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Package;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -16,6 +17,10 @@ class User extends \TCG\Voyager\Models\User
      *
      * @var array
      */
+    public function package(){
+        return $this->belongsTo(Package::class,'package_id');
+    }
+
     protected $fillable = [
         'name',
         'email',

@@ -85,6 +85,20 @@
                                 </table>
                             </div>
                         </div>
+                        {{-- <form id="dateForm" method="get">
+                            <div style="display: flex; align-items: center;">
+                                <div>
+                                    <input class="form-control" type="text" class="customDate" name="from" placeholder="from" data-select="datepicker" readonly>
+                                </div>
+                                <div>
+                                    <input class="form-control" type="text" class="customDate" name="to" placeholder="to" data-select="datepicker">
+                                </div>
+                                <div>
+                                    <button type="submit" class="btn btn-success">Generate Report</button>
+                                </div>
+                            </div>
+                            
+                        </form> --}}
                         
                     </div>
                 </div>
@@ -108,6 +122,7 @@
        
        
         $('#customDate').prop("readonly", true);
+        $('.customDate').prop("readonly", true);
 
         function attendUser(id){
             var checked = $('#user'+id).prop('checked')==true ? 1 : 0;

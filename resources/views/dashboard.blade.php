@@ -19,6 +19,9 @@
     {{--            </div>--}}
     {{--        </div>--}}
     {{--    </div>--}}
+    @php
+      $user = Auth::user();  
+    @endphp
     <div class="container">
         <div class="section-title mb-3">
             <h2><strong>TRAINEE</strong> DASHBOARD</h2>
@@ -27,61 +30,82 @@
             <div class="col-3 mb-4">
                 <div class="card custom-card">
                     <div class="card-body">
-                        <h5 class="card-title">Name of Trainee</h5>
-                        <p class="card-text">This is content of trainee.</p>
-                    </div>
-                    <div class="card-body">
-                        <a href="#" class="card-link">Card link</a>
-                        <a href="#" class="card-link">Another link</a>
+                        <div class="basic-details">
+                            <h5 class="card-title">{{ $user->name }}</h5>
+                            <p class="card-text">{{ $user->gender }}</p>
+                            <p class="card-text">DOB: {{ $user->dob }}</p>
+                        </div>
                     </div>
                 </div>
             </div>
+
             <div class="col-9 mb-4">
                 <div class="card custom-card">
-                    <div class="card-body">
-                        <h5 class="card-title">Personal Information</h5>
+
+                    <form action="/updateUser" method="post">
+                    <div class="card-body" style="display: flex;
+                    align-items: center;
+                    justify-content: space-between;">
+                        <h5 class="card-title">Contact Information</h5>
+                        @if(!request('edit'))
+                        <a href="?edit=1" class="btn btn-primary">Edit</a>
+                        @else
+                        <button class="btn btn-success" type="submit">Save</button>
+                        @endif
                     </div>
+                        @csrf
+                        <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <div class="row">
-                                <div class="col-3">
-                                    <span><strong>Name: </strong></span>
-                                </div>
-                                <div class="col-9">
-                                    <span>Ajeeb Rimal</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item"><div class="row">
-                                <div class="col-3">
-                                    <span><strong>Gender: </strong></span>
-                                </div>
-                                <div class="col-9">
-                                    <span>Male</span>
-                                </div>
-                            </div></li>
                         <li class="list-group-item"><div class="row">
                                 <div class="col-3">
                                     <span><strong>Address: </strong></span>
                                 </div>
                                 <div class="col-9">
-                                    <span>Maitidevi</span>
+                                    @if(request('edit'))
+                                    <span><input type="text" class="form-control" name="address" value="{{ $user->address }}" id=""></span>
+                                    @else
+                                    <span>{{ $user->address }}</span>
+                                    @endif
                                 </div>
                             </div></li>
-                        <li class="list-group-item"><div class="row">
+                        <li class="list-group-item">
+                            <div class="row">
                                 <div class="col-3">
                                     <span><strong>Contact No.: </strong></span>
                                 </div>
                                 <div class="col-9">
-                                    <span>+9779845580590</span>
+                                    @if(request('edit'))
+                                    <span><input type="text" class="form-control" name="contact" value="{{ $user->contact }}" id=""></span>
+                                    @else
+                                    <span>{{ $user->contact }}</span>
+                                    @endif
                                 </div>
-                            </div></li>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-3">
+                                    <span><strong>E-mail: </strong></span>
+                                </div>
+                                <div class="col-9">
+                                    @if(request('edit'))
+                                    <span><input type="text" class="form-control" name="email" value="{{ $user->email }}" id=""></span>
+                                    @else
+                                    <span>{{ $user->email }}</span>
+                                    @endif
+                                </div>
+                            </div>
+                        </li>
                         <li class="list-group-item"><div class="row">
                                 <div class="col-3">
                                     <span><strong>Emergency Contact No.: </strong></span>
                                 </div>
                                 <div class="col-9">
-                                    <span>+9779845404747</span>
+                                    @if(request('edit'))
+                                    <span><input type="text" class="form-control" name="emergency_contact" value="{{ $user->emergency_contact }}" id=""></span>
+                                    @else
+                                    <span>{{ $user->emergency_contact }}</span>
+                                    @endif
                                 </div>
                             </div></li>
                         <li class="list-group-item"><div class="row">
@@ -89,25 +113,52 @@
                                     <span><strong>Health Condition: </strong></span>
                                 </div>
                                 <div class="col-9">
-                                    <span>Cancer</span>
+                                    @if(request('edit'))
+                                    <span><input type="text" class="form-control" name="health_condition" value="{{ $user->health_condition }}" id=""></span>
+                                    @else
+                                    <span>{{ $user->health_condition }}</span>
+                                    @endif
                                 </div>
                             </div></li>
                     </ul>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-3 mb-4">
+                <div class="card custom-card">
                     <div class="card-body">
-                        <a href="#" class="card-link">Card link</a>
-                        <a href="#" class="card-link">Another link</a>
+                        <p class="card-text">{{ $user->package->title }}</p>
+                    </div>
+                    <div class="card-body">
+                        <a href="#" class="btn btn-success">Make Payment</a>
                     </div>
                 </div>
             </div>
+
             <div class="col mb-4">
                 <div class="card custom-card">
                     <div class="card-body">
-                        <h5 class="card-title">Name of Trainee</h5>
-                        <p class="card-text">This is content of trainee.</p>
-                    </div>
-                    <div class="card-body">
-                        <a href="#" class="card-link">Card link</a>
-                        <a href="#" class="card-link">Another link</a>
+                        <h5 class="card-title">Payment Information</h5>
+                        <table id="paymentTable" class="table table-bordered" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>SN</th>
+                                    <th>Package</th>
+                                    <th>Date</th>
+                                    <th>Payment Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Package 1</td>
+                                    <td>Edinburgh</td>
+                                    <td>61</td>
+                                </tr>
+                            </tbody>
+
+                        </table>
                     </div>
                 </div>
             </div>

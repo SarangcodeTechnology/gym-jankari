@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +19,7 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::post('/updateUser',[UserController::class,'update']);
 Route::post('/updateAttendance',[AttendanceController::class,'update']);
 
 
