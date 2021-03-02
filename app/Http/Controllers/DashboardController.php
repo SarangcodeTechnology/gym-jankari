@@ -25,7 +25,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $paymentDetails = Payment::where('user_id',Auth::user()->id)->get();
+        $paymentDetails = Payment::where('user_id',Auth::user()->id)->orderBy('payment_date','desc')->get();
         return view('dashboard',compact(
             'paymentDetails'
         ));

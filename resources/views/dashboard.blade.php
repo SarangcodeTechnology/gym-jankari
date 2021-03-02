@@ -6,9 +6,12 @@
       date_default_timezone_set('Asia/Kathmandu');
         $todayDate = strtotime(date("Y-m-d"));
         $ongoing = \App\Payment::where('user_id',$user->id)->where('status',1)->first();
-        $expiryDate = strtotime($ongoing->expiry_date);
-        $remainingDays = ($expiryDate - $todayDate)/60/60/24;
+        if($ongoing){
+            $expiryDate = strtotime($ongoing->expiry_date);
+            $remainingDays = ($expiryDate - $todayDate)/60/60/24;
+        }
     @endphp
+    @if($ongoing)
     <div class="container">
         <div class="section-title mb-3">
             <h2><strong>TRAINEE</strong> DASHBOARD</h2>
@@ -18,7 +21,7 @@
                 <div class="card custom-card">
                     <div class="card-body">
                         <div class="basic-details">
-                            <h5 class="card-title">{{ $user->name }} <span>{{ $remainingDays }} days remaining</span></h5>
+                            <h5 class="card-title">{{ $user->name }} <span>{{ isset($remainingDays) ? $remainingDays : 0 }} days remaining</span></h5>
                             <p class="card-text">{{ $user->gender }}</p>
                             <p class="card-text">DOB: {{ $user->dob }}</p>
                         </div>
@@ -122,10 +125,16 @@
                         <p class="card-text">{{ $user->package->title }}</p>
                     </div>
                     @endif
-                    @if($remainingDays<=10)
-                    <div class="card-body">
-                        <a href="{{ route('payment') }}" class="btn btn-success">Make Payment</a>
-                    </div>
+                    @if(isset($remainingDays))
+                        @if($remainingDays<=10)
+                        <div class="card-body">
+                            <a href="{{ route('payment') }}" class="btn btn-success">Make Payment</a>
+                        </div>
+                        @endif
+                    @else
+                        <div class="card-body">
+                            <a href="{{ route('payment') }}" class="btn btn-success">Make Payment</a>
+                        </div>
                     @endif
                 </div>
             </div>
@@ -149,7 +158,7 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $item->payment_date }}</td>
                                     <td>{{ $item->package->title }}</td>
-                                    <td>{{ $item->duration }}</td>
+                                    <td>Rs. {{ \App\Package::where('id',$item->package_id)->first()->{$item->duration.'_price'} }}</td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -161,7 +170,11 @@
         </div>
 
     </div>
-
+    @else
+    <div class="container">
+        <p>Payment not Activated</p>
+        <a href="/payment">Pay</a>
     </div>
+    @endif
 
 @endsection
