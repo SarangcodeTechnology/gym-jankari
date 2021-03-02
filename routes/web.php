@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -38,6 +39,7 @@ Route::get('/', function () {
     return view('index');
 });
 Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
+Route::get('/payment', [PaymentController::class, 'index'])->name('payment');
 Route::get('/trainers', [App\Http\Controllers\TrainersController::class, 'index'])->name('trainers');
 Route::get('/schedules', [App\Http\Controllers\SchedulesController::class, 'index'])->name('schedules');
 Route::get('/packages', [App\Http\Controllers\PackagesController::class, 'index'])->name('packages');

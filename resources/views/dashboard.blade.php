@@ -21,6 +21,11 @@
     {{--    </div>--}}
     @php
       $user = Auth::user();  
+      date_default_timezone_set('Asia/Kathmandu');
+        $todayDate = strtotime(date("Y-m-d"));
+        $ongoing = \App\Payment::where('user_id',$user->id)->where('status',1)->first();
+        $expiryDate = strtotime($ongoing->expiry_date);
+        $remainingDays = ($expiryDate - $todayDate)/60/60/24;
     @endphp
     <div class="container">
         <div class="section-title mb-3">
@@ -31,7 +36,7 @@
                 <div class="card custom-card">
                     <div class="card-body">
                         <div class="basic-details">
-                            <h5 class="card-title">{{ $user->name }}</h5>
+                            <h5 class="card-title">{{ $user->name }} <span>{{ $remainingDays }} days remaining</span></h5>
                             <p class="card-text">{{ $user->gender }}</p>
                             <p class="card-text">DOB: {{ $user->dob }}</p>
                         </div>
@@ -130,12 +135,16 @@
 
             <div class="col-3 mb-4">
                 <div class="card custom-card">
+                    @if($user->package_id)
                     <div class="card-body">
                         <p class="card-text">{{ $user->package->title }}</p>
                     </div>
+                    @endif
+                    @if($remainingDays<=10)
                     <div class="card-body">
-                        <a href="#" class="btn btn-success">Make Payment</a>
+                        <a href="{{ route('payment') }}" class="btn btn-success">Make Payment</a>
                     </div>
+                    @endif
                 </div>
             </div>
 
