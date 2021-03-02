@@ -126,7 +126,7 @@
                     </div>
                     @endif
                     @if(isset($remainingDays))
-                        @if($remainingDays<=10)
+                        @if($remainingDays<=7)
                         <div class="card-body">
                             <a href="{{ route('payment') }}" class="btn btn-success">Make Payment</a>
                         </div>
