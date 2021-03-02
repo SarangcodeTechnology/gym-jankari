@@ -1,24 +1,6 @@
 @extends('layout.app')
 
 @section('body')
-    {{--<div class="container">--}}
-    {{--    <div class="row justify-content-center">--}}
-    {{--        <div class="col-md-3">--}}
-    {{--            <div class="card">--}}
-    {{--                <div class="card-header">{{ __('Dashboard') }}</div>--}}
-
-    {{--                <div class="card-body">--}}
-    {{--                    @if (session('status'))--}}
-    {{--                        <div class="alert alert-success" role="alert">--}}
-    {{--                            {{ session('status') }}--}}
-    {{--                        </div>--}}
-    {{--                    @endif--}}
-
-    {{--                    {{ __('You are logged in!') }}--}}
-    {{--                </div>--}}
-    {{--            </div>--}}
-    {{--        </div>--}}
-    {{--    </div>--}}
     @php
       $user = Auth::user();  
       date_default_timezone_set('Asia/Kathmandu');
@@ -156,18 +138,20 @@
                             <thead>
                                 <tr>
                                     <th>SN</th>
+                                    <th>Payment Date</th>
                                     <th>Package</th>
-                                    <th>Date</th>
                                     <th>Payment Amount</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($paymentDetails as $item)
                                 <tr>
-                                    <td>1</td>
-                                    <td>Package 1</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $item->payment_date }}</td>
+                                    <td>{{ $item->package->title }}</td>
+                                    <td>{{ $item->duration }}</td>
                                 </tr>
+                                @endforeach
                             </tbody>
 
                         </table>
