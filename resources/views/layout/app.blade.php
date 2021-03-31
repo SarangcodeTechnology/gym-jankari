@@ -45,12 +45,10 @@
 
         <nav class="nav-menu d-none d-lg-block">
             <ul>
-                <li class="active"><a href="/#">Home</a></li>
-                <li><a href="/trainers">Trainers</a></li>
-                <li><a href="/schedules">Schedules</a></li>
-                <li><a href="/packages">Packages</a></li>
-                <li><a href="/blogs">Blogs</a></li>
-                <li><a href="/contact">Contact Us</a></li>
+                <li class="@if(Request::segment(1)=='/' || Request::segment(1)=="" || Request::segment(1)=="#") active @endif "><a href="/#">Home</a></li>
+                <li class="@if(Request::segment(1)=='trainers') active @endif"><a href="/trainers">Trainers</a></li>
+                <li class="@if(Request::segment(1)=='packages') active @endif"><a href="/packages">Packages</a></li>
+                <li class="@if(Request::segment(1)=='contact') active @endif"><a href="/contact">Contact Us</a></li>
                 {{-- <li class="drop-down"><a href="">Drop Down</a>
                   <ul>
                     <li><a href="#">Drop Down 1</a></li>
@@ -142,9 +140,7 @@
 
 
 <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
-@if(Request::segment(1)!='dashboard')
-<div id="preloader"></div>
-@endif
+
 <!-- Vendor JS Files -->
 <script src="assets/vendor/jquery/jquery.min.js"></script>
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

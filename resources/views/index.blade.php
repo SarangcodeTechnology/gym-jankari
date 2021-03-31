@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-7 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
-                     data-aos="fade-up" data-aos-delay="200">
+                     >
                     <h1>The best place to train in KTown.</h1>
                     <h2>We are a group of professional trainers ready to tailor your fitness training needs.</h2>\
                     <div class="d-lg-flex">
@@ -15,8 +15,8 @@
                                   style=" font-size: 1.5em;"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
+                <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="" >
+                    <img src="assets/img/hero-img.png" class="img-fluid" alt="">
                 </div>
             </div>
         </div>
@@ -26,7 +26,7 @@
 
         <!-- ======= About Us Section ======= -->
         <section id="about" class="about">
-            <div class="container" data-aos="fade-up">
+            <div class="container">
                 <div class="section-title">
                     <h2>About Us</h2>
                 </div>
@@ -57,25 +57,25 @@
                         </ul>
                     </div>
                 </div>
-                {{--                <div class="container services" data-aos="fade-up">--}}
+                {{--                <div class="container services">--}}
                 {{--                    <div class="row">--}}
-                {{--                        <div class="col-xl-4 col-md-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">--}}
+                {{--                        <div class="col-xl-4 col-md-4 d-flex align-items-stretch" data-aos="" >--}}
                 {{--                            <div class="icon-box">--}}
                 {{--                                <div class="icon"><i class="icofont-bullseye"></i></div>--}}
                 {{--                                <h4><a href="">Mission</a></h4>--}}
                 {{--                                <p>Our mission is to make every trainee fit in flexible schedule inexpensively.</p>--}}
                 {{--                            </div>--}}
                 {{--                        </div>--}}
-                {{--                        <div class="col-xl-4 col-md-4 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"--}}
-                {{--                             data-aos-delay="200">--}}
+                {{--                        <div class="col-xl-4 col-md-4 d-flex align-items-stretch mt-4 mt-md-0" data-aos=""--}}
+                {{--                             >--}}
                 {{--                            <div class="icon-box">--}}
                 {{--                                <div class="icon"><i class="icofont-eye-alt"></i></div>--}}
                 {{--                                <h4><a href="">Vision</a></h4>--}}
                 {{--                                <p>Our vision is to develop a physically fit nation.</p>--}}
                 {{--                            </div>--}}
                 {{--                        </div>--}}
-                {{--                        <div class="col-xl-4 col-md-4 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"--}}
-                {{--                             data-aos-delay="300">--}}
+                {{--                        <div class="col-xl-4 col-md-4 d-flex align-items-stretch mt-4 mt-xl-0" data-aos=""--}}
+                {{--                             >--}}
                 {{--                            <div class="icon-box">--}}
                 {{--                                <div class="icon"><i class="icofont-football-alt"></i></div>--}}
                 {{--                                <h4><a href="">Goal</a></h4>--}}
@@ -91,7 +91,7 @@
 
         <!-- ======= Schedules Section ======= -->
         <section class="why-us section-bg">
-            <div class="container" data-aos="fade-up">
+            <div class="container">
                 <div class="row">
                     <div
                         class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
@@ -109,8 +109,8 @@
                         </div>
                     </div>
                     <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img"
-                         style='background-image: url("assets/img/time-to-train.svg");' data-aos="zoom-in"
-                         data-aos-delay="150">&nbsp;
+                         style='background-image: url("assets/img/time-to-train.svg");' data-aos=""
+                         >&nbsp;
                     </div>
                 </div>
 
@@ -119,11 +119,11 @@
 
         <!-- ======= Packages Section ======= -->
         <section class="why-us">
-            <div class="container" data-aos="fade-up">
+            <div class="container">
                 <div class="row">
                     <div class="col-lg-5 align-items-stretch order-2 order-lg-1 img"
-                         style='background-image: url("assets/img/skills.png");' data-aos="zoom-in"
-                         data-aos-delay="150">&nbsp;
+                         style='background-image: url("assets/img/skills.png");' data-aos=""
+                         >&nbsp;
                     </div>
                     <div
                         class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-1 order-lg-2">
@@ -188,7 +188,7 @@
 
         <!-- ======= Trainers Section ======= -->
         <section class="why-us section-bg">
-            <div class="container" data-aos="fade-up">
+            <div class="container">
                 <div class="row">
                     <div
                         class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
@@ -206,8 +206,8 @@
                         </div>
                     </div>
                     <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img"
-                         style='background-image: url("assets/img/trainers.svg");' data-aos="zoom-in"
-                         data-aos-delay="150">&nbsp;
+                         style='background-image: url("assets/img/trainers.svg");' data-aos=""
+                         >&nbsp;
                     </div>
                 </div>
 
@@ -216,7 +216,7 @@
 
         <!-- ======= Cta Section ======= -->
         <section id="cta" class="cta">
-            <div class="container" data-aos="zoom-in">
+            <div class="container" data-aos="">
                 <div class="row">
                     <div class="col-lg-9 text-center text-lg-left">
                         <h3 style="font-weight: 400;">START <strong>TRAINING</strong> TODAY</h3>
@@ -233,11 +233,11 @@
 
         <!-- ======= Contact Section ======= -->
         <section class="why-us">
-            <div class="container-fluid" data-aos="fade-up">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-5 align-items-stretch order-2 order-lg-1 img content"
-                         data-aos="zoom-in"
-                         data-aos-delay="150">
+                         data-aos=""
+                         >
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.3793443817704!2d85.33221635112764!3d27.705571532091376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19a000ac6259%3A0x9d9f16732861e650!2sMaitidevi%20Temple!5e0!3m2!1sen!2snp!4v1613062712692!5m2!1sen!2snp"
                             width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""
