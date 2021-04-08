@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Package;
+use App\Payment;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -53,4 +54,8 @@ class User extends \TCG\Voyager\Models\User
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function firstPaymentDate($id){
+        return Payment::where('user_id',$id)->orderBy('payment_date')->first();
+    }
 }

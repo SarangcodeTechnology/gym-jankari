@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Page;
 use Illuminate\Http\Request;
 
 class BlogsController extends Controller
@@ -14,6 +15,12 @@ class BlogsController extends Controller
      */
     public function index()
     {
-        return view('blogs');
+        $blogs = Page::orderBy('created_at','desc')->get();
+        return view('blogs.lists',compact('blogs'));
+    }
+
+    public function show($slug){
+        $blog = Page::where('slug',$slug)->first();
+        return view('blogs.show',compact('blog'));
     }
 }

@@ -38,7 +38,8 @@
                         @php
                             date_default_timezone_set('Asia/Kathmandu');
                             $todayDate = date("Y-m-d");
-                            function checkUser($id) { 
+                            $date = request('date') ?? $todayDate ;
+                            function checkUser($id) {
                                 date_default_timezone_set('Asia/Kathmandu');
                                 $todayDate = date("Y-m-d");
                                 $date = request('date') ?? $todayDate ;
@@ -74,14 +75,29 @@
                                     </thead>
                                     <tbody>
                                         @foreach (\App\Models\User::all() as $item)
-                                        <tr>
-                                            <td>{{ $item->name }}</td>
-                                             <td style="display: flex; justify-content:center"><input type="checkbox" id="user{{ $item->id }}" onclick="attendUser('{{ $item->id }}')" {{ checkUser($item->id) }}></td>
-                                        </tr>
-                                        @endforeach   
-        
+                                            {{-- @if(strtotime($todayDate) < strtotime($item->firstPaymentDate)) --}}
+                                            @php
+                                               $payment =  $item->firstPaymentDate($item->id);
+                                               if($payment){
+                                                   $paymentDate = $payment->payment_date;
+                                               }
+                                               else{
+                                                   $paymentDate = 0;
+                                               }
+                                            @endphp
+                                            @if($paymentDate)
+                                               @if($date > $paymentDate)
+                                                <tr>
+                                                    <td>{{ $item->name }}</td>
+                                                    <td style="display: flex; justify-content:center"><input type="checkbox" id="user{{ $item->id }}" onclick="attendUser('{{ $item->id }}')" {{ checkUser($item->id) }}></td>
+                                                </tr>
+                                                @endif
+                                            @endif
+                                            {{-- @endif --}}
+                                        @endforeach
+
                                     </tbody>
-                                    
+
                                 </table>
                             </div>
                         </div>
@@ -97,9 +113,9 @@
                                     <button type="submit" class="btn btn-success">Generate Report</button>
                                 </div>
                             </div>
-                            
+
                         </form> --}}
-                        
+
                     </div>
                 </div>
             </div>
@@ -119,8 +135,8 @@
 @section('javascript')
     <script src="/js/jquery.datepicker2.js"></script>
     <script>
-       
-       
+
+
         $('#customDate').prop("readonly", true);
         $('.customDate').prop("readonly", true);
 

@@ -20,7 +20,7 @@
                                     <span><strong>Select Package: </strong></span>
                                 </div>
                                 <div class="col-9">
-                                    <select class="form-control" wire:model="package">
+                                    <select class="form-control" wire:model="package" required>
                                             <option value="-1" selected="selected">Select</option>
                                         @foreach ($packages as $item)
                                             <option value="{{ $item->id }}">{{ $item->title }}</option>
@@ -55,7 +55,12 @@
                                 </div>
                             </div>
                         </li>
-                        <button wire:click="submit" class="btn btn-success mt-2">Pay</button>
+                        <div class="pay-buttons">
+                            <button wire:click="submit" class="btn btn-success mt-2 mr-2"><img class="esewa" src="/assets/img/esewa.ico" alt=""> Pay With Esewa</button>
+                            <button wire:click="submit" class="btn btn-primary mt-2 mr-2"><img class="esewa" src="/assets/img/paypal.png" alt="">  Pay With Paypal</button>
+                            <button wire:click="submit" class="btn btn-secondary mr-2 mt-2"><img class="esewa" src="/assets/img/khalti.png" alt="">  Pay With Khalti</button>
+                            <button wire:click="submit" class="btn btn-info mt-2"><img class="esewa" src="/assets/img/pay-with-cash.png" alt="">  Pay</button>
+                        </div>
                     </ul>
                 </div>
             </div>
@@ -63,3 +68,27 @@
         </div>
     </div>
 </div>
+
+<style>
+    .pay-buttons{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+    .esewa{
+        height: 25px;
+        width: 25px;
+        padding: 3px;
+        background: #fff;
+        border-radius: 20px;
+    }
+    .btn-secondary {
+        color: #fff;
+        background-color: #632a7a;
+        border-color: #6c757d;
+    }
+    .btn-secondary:hover{
+        background-color: #512264;
+    }
+</style>

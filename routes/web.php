@@ -20,6 +20,8 @@ Route::get('/', function () {
     return view('index');
 });
 
+
+
 Route::post('/updateUser',[UserController::class,'update']);
 Route::post('/updateAttendance',[AttendanceController::class,'update']);
 
@@ -28,10 +30,7 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-// trainer-login
-Route::get('/trainer-login',[App\Http\Controllers\TrainerAuth\LoginController::class, 'showLoginForm'])->name('trainer.login');
-Route::post('/trainer-login', [App\Http\Controllers\TrainerAuth\LoginController::class, 'login'])->name('trainer.login');
-Route::get('/trainer-dashboard', [App\Http\Controllers\TrainerAuth\DashboardController::class, 'index'])->name('trainer.dashboard');
+
 
 Auth::routes();
 
@@ -44,4 +43,6 @@ Route::get('/trainers', [App\Http\Controllers\TrainersController::class, 'index'
 Route::get('/schedules', [App\Http\Controllers\SchedulesController::class, 'index'])->name('schedules');
 Route::get('/packages', [App\Http\Controllers\PackagesController::class, 'index'])->name('packages');
 Route::get('/blogs', [App\Http\Controllers\BlogsController::class, 'index'])->name('blogs');
+Route::get('/blog/{slug}', [App\Http\Controllers\BlogsController::class, 'show']);
+
 Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index'])->name('contact');

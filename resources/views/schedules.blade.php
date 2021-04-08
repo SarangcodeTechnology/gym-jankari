@@ -4,7 +4,7 @@
     <div class="container">
         <!-- ======= Portfolio Section ======= -->
         <section id="portfolio" class="portfolio">
-            <div class="container" data-aos="fade-up">
+            <div class="container" >
 
                 <div class="section-title">
                     <h2>Portfolio</h2>
@@ -13,14 +13,14 @@
                         ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
                 </div>
 
-                <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                <ul id="portfolio-flters" class="d-flex justify-content-center"  >
                     <li data-filter="*" class="filter-active">All</li>
                     <li data-filter=".filter-app">App</li>
                     <li data-filter=".filter-card">Card</li>
                     <li data-filter=".filter-web">Web</li>
                 </ul>
 
-                <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+                <div class="row portfolio-container"  data-aos-delay="200">
 
                     <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                         <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid"

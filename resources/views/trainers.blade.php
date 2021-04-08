@@ -3,7 +3,7 @@
 @section('body')
     <div class="container"><!-- ======= Team Section ======= -->
         <section id="team" class="team">
-            <div class="container" data-aos="fade-up">
+            <div class="container" >
 
                 <div class="section-title">
                     <h2>Trainers</h2>
@@ -15,7 +15,7 @@
                 <div class="row">
                     @foreach (\App\Trainer::orderBy('order')->get() as $item)
                     <div class="col-lg-6">
-                        <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="member d-flex align-items-start"  >
                             <div class="pic"><img src="{{ Voyager::image($item->image) }}" class="img-fluid" alt=""></div>
                             <div class="member-info">
                                 <h4>{{ $item->name }}</h4>

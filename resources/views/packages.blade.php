@@ -4,7 +4,7 @@
     <!-- ======= Pricing Section ======= -->
     <div class="container">
         <section id="pricing" class="pricing">
-            <div class="container" data-aos="fade-up">
+            <div class="container" >
 
                 <div class="section-title">
                     <h2>Packages</h2>
@@ -15,7 +15,7 @@
 
                 <div class="row">
                     @foreach ($packages as $item)
-                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="{{ $loop->iteration*100 }}">
+                    <div class="col-lg-4"  data-aos-delay="{{ $loop->iteration*100 }}">
                         <div class="box">
                             <h3>{{ $item->title }}</h3>
                             <h4><sup>Rs</sup>{{ $item->one_month_price }}<span>per month</span></h4>
@@ -25,7 +25,7 @@
                     </div>
                     @endforeach
 
-                    {{-- <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="200">
+                    {{-- <div class="col-lg-4 mt-4 mt-lg-0"  data-aos-delay="200">
                         <div class="box featured">
                             <h3>Business Plan</h3>
                             <h4><sup>$</sup>29<span>per month</span></h4>
@@ -40,7 +40,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
+                    <div class="col-lg-4 mt-4 mt-lg-0"  data-aos-delay="300">
                         <div class="box">
                             <h3>Developer Plan</h3>
                             <h4><sup>$</sup>49<span>per month</span></h4>

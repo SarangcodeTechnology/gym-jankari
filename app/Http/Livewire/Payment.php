@@ -9,6 +9,12 @@ use Livewire\Component;
 class Payment extends Component
 {
     public  $packages, $payment_amount, $package=-1, $duration = 'one_month', $price=0, $user, $days=30;
+
+    protected $rules = [
+        'package' => 'required'
+    ];
+
+
     public function render()
     {
         $this->packages = Package::all();
@@ -47,6 +53,7 @@ class Payment extends Component
     }
 
     public function submit(){
+        $this->validate();
         date_default_timezone_set('Asia/Kathmandu');
         $todayDate = date("Y-m-d");
 
@@ -60,7 +67,7 @@ class Payment extends Component
         if($pendingUser){
             $pendingUser->status=-1;
             $pendingUser->update();
-        } 
+        }
 
         // set on going payment to pending and add new payment and ongoing
         if($onGoingUser){
@@ -85,7 +92,7 @@ class Payment extends Component
             $payment->expiry_date = date('Y-m-d', strtotime($todayDate. ' + '.$this->days.' days'));
             $payment->duration = $this->duration;
             $payment->status = 1;
-            $payment->save(); 
+            $payment->save();
         }
         // second payment
 

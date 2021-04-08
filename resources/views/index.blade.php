@@ -89,33 +89,6 @@
             </div>
         </section><!-- End About Us Section -->
 
-        <!-- ======= Schedules Section ======= -->
-        <section class="why-us section-bg">
-            <div class="container">
-                <div class="row">
-                    <div
-                        class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
-                        <div class="content">
-                            <h3><strong>TIME</strong> TO TRAIN</h3>
-                            <p>
-                                The best way to train is to train in schedule. So that you dont ever remain behind on
-                                training schedule, we have developed some training schedules you can choose.
-                            </p>
-                        </div>
-                        <div class="d-lg-flex content">
-                            <a href="{{ route('schedules') }}" class="custom-button"><i
-                                    class="icofont-clock-time" style=" font-size: 1.5em;"></i>
-                                BROWSE <strong>SCHEDULES</strong></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img"
-                         style='background-image: url("assets/img/time-to-train.svg");' data-aos=""
-                         >&nbsp;
-                    </div>
-                </div>
-
-            </div>
-        </section><!-- End Schedules Section -->
 
         <!-- ======= Packages Section ======= -->
         <section class="why-us">
@@ -239,7 +212,7 @@
                          data-aos=""
                          >
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.3793443817704!2d85.33221635112764!3d27.705571532091376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19a000ac6259%3A0x9d9f16732861e650!2sMaitidevi%20Temple!5e0!3m2!1sen!2snp!4v1613062712692!5m2!1sen!2snp"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.593534839098!2d85.3357853146197!3d27.698954982795332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb199940d81663%3A0xaf36b9b58903050f!2sAPEX%20COLLEGE!5e0!3m2!1sne!2snp!4v1617267051794!5m2!1sne!2snp"
                             width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""
                             aria-hidden="false" tabindex="0"></iframe>
 
