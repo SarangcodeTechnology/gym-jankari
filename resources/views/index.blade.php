@@ -57,35 +57,6 @@
                         </ul>
                     </div>
                 </div>
-                {{--                <div class="container services">--}}
-                {{--                    <div class="row">--}}
-                {{--                        <div class="col-xl-4 col-md-4 d-flex align-items-stretch" data-aos="" >--}}
-                {{--                            <div class="icon-box">--}}
-                {{--                                <div class="icon"><i class="icofont-bullseye"></i></div>--}}
-                {{--                                <h4><a href="">Mission</a></h4>--}}
-                {{--                                <p>Our mission is to make every trainee fit in flexible schedule inexpensively.</p>--}}
-                {{--                            </div>--}}
-                {{--                        </div>--}}
-                {{--                        <div class="col-xl-4 col-md-4 d-flex align-items-stretch mt-4 mt-md-0" data-aos=""--}}
-                {{--                             >--}}
-                {{--                            <div class="icon-box">--}}
-                {{--                                <div class="icon"><i class="icofont-eye-alt"></i></div>--}}
-                {{--                                <h4><a href="">Vision</a></h4>--}}
-                {{--                                <p>Our vision is to develop a physically fit nation.</p>--}}
-                {{--                            </div>--}}
-                {{--                        </div>--}}
-                {{--                        <div class="col-xl-4 col-md-4 d-flex align-items-stretch mt-4 mt-xl-0" data-aos=""--}}
-                {{--                             >--}}
-                {{--                            <div class="icon-box">--}}
-                {{--                                <div class="icon"><i class="icofont-football-alt"></i></div>--}}
-                {{--                                <h4><a href="">Goal</a></h4>--}}
-                {{--                                <p>Our goal is to increase fitness consciousness in every individual.</p>--}}
-                {{--                            </div>--}}
-                {{--                        </div>--}}
-
-                {{--                    </div>--}}
-                {{--                </div>--}}
-
             </div>
         </section><!-- End About Us Section -->
 
@@ -108,45 +79,7 @@
                                 us, they have choosen following packages the most.
                             </p>
                         </div>
-                        <div class="d-lg-flex content skills">
-                            <div class="skills-content container">
-                                <div class="progress">
-                                    <span class="skill">Cardio<i class="val">20%</i></span>
-                                    <div class="progress-bar-wrap">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="20"
-                                             aria-valuemin="0"
-                                             aria-valuemax="100"></div>
-                                    </div>
-                                </div>
 
-                                <div class="progress">
-                                    <span class="skill">Gym <i class="val">40%</i></span>
-                                    <div class="progress-bar-wrap">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="40"
-                                             aria-valuemin="0"
-                                             aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-
-                                <div class="progress">
-                                    <span class="skill">Cardio + Gym <i class="val">10%</i></span>
-                                    <div class="progress-bar-wrap">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="10"
-                                             aria-valuemin="0"
-                                             aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-
-                                <div class="progress">
-                                    <span class="skill">Zumba<i class="val">30%</i></span>
-                                    <div class="progress-bar-wrap">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="30"
-                                             aria-valuemin="0"
-                                             aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="row content">
                             <a href="{{ route('packages') }}" class="custom-button"><i class="icofont-box"
                                                                                        style=" font-size: 1.5em;"></i>

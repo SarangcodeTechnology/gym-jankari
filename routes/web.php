@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\ResetController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,6 +35,12 @@ Route::group(['prefix' => 'admin'], function () {
 
 Auth::routes();
 
+Route::post('/reset',[ResetController::class,'reset'])->name('reset.mypassword');
+Route::get('/changepassword',[ResetController::class,'changepassword']);
+Route::post('/changepassword',[ResetController::class,'password']);
+Route::post('/send-email',function(){
+    return redirect()->back()->with('message','Your Message is successfully sent');
+});
 Route::get('/', function () {
     return view('index');
 });

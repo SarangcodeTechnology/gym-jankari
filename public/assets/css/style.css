@@ -1039,7 +1039,6 @@ section {
   padding: 30px;
   border-radius: 5px;
   background: #fff;
-  transition: 0.5s;
 }
 
 .team .member .pic {
@@ -1048,13 +1047,6 @@ section {
   border-radius: 50%;
 }
 
-.team .member .pic img {
-  transition: ease-in-out 0.3s;
-}
-
-.team .member:hover {
-  transform: translateY(-10px);
-}
 
 .team .member .member-info {
   padding-left: 30px;

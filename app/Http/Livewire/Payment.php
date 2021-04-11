@@ -20,6 +20,7 @@ class Payment extends Component
         $this->packages = Package::all();
         return view('livewire.payment');
     }
+
     public function updatedPackage(){
         if($this->package!=-1){
             $this->price = Package::find($this->package)->one_month_price;
@@ -28,6 +29,7 @@ class Payment extends Component
             $this->price = 0;
         }
     }
+
     public function updatedDuration(){
         switch($this->duration){
             case 'one_month':

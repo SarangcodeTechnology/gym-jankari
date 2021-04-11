@@ -2,7 +2,7 @@
 
 @section('body')
     @php
-      $user = Auth::user();  
+      $user = Auth::user();
       date_default_timezone_set('Asia/Kathmandu');
         $todayDate = strtotime(date("Y-m-d"));
         $ongoing = \App\Payment::where('user_id',$user->id)->where('status',1)->first();
@@ -31,7 +31,6 @@
 
             <div class="col-9 mb-4">
                 <div class="card custom-card">
-
                     <form action="/updateUser" method="post">
                     <div class="card-body" style="display: flex;
                     align-items: center;
@@ -41,7 +40,7 @@
                         <a href="?edit=1" class="btn btn-primary">Edit</a>
                         @else
                         <div>
-                            <button class="btn btn-primary" onclick="window.history.back();">Back</button>
+                            <a href="#" class="btn btn-primary" onclick="window.history.back();">Back</a>
                             <button class="btn btn-success" type="submit">Save</button>
                         </div>
                         @endif
@@ -120,11 +119,9 @@
 
             <div class="col-3 mb-4">
                 <div class="card custom-card">
-                    @if($user->package_id)
                     <div class="card-body">
-                        <p class="card-text">{{ $user->package->title }}</p>
+                        <p class="card-text">{{ $paymentDetails->first()->package->title }}</p>
                     </div>
-                    @endif
                     @if(isset($remainingDays))
                         @if($remainingDays<=7)
                         <div class="card-body">

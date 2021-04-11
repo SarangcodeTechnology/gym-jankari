@@ -93,24 +93,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="package" class="col-md-4 col-form-label text-md-right">{{ __('Package') }}</label>
 
-                            <div class="col-md-6">
-                                <select class="form-control" id="package" name="package_id">
-                                    <option selected value="-1">Select</option>
-                                    @foreach (\App\Package::all() as $item)
-                                        <option value="{{ $item->id }}">{{ $item->title }}</option>
-                                    @endforeach
-                                </select>
-
-                                @error('package')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
                         {{-- <div class="form-group row">
                             <label for="schedule" class="col-md-4 col-form-label text-md-right">{{ __('Schedule') }}</label>
 
@@ -190,23 +173,4 @@
         </div>
     </div>
 </div>
-@endsection
-
-@section('script')
-    <script>
-        $('#datepicker').datepicker({
-            uiLibrary: 'bootstrap4'
-        });
-        
-        $('#package').change(function(){
-            $('#schedule').empty();
-            @foreach(\App\Schedule::all() as $item)
-                @php $day=ucfirst($item->day); @endphp
-                if($(this).val() =='{{ $item->package_id }}')
-                {
-                    $('#schedule').append('<option value="{{ $item->id }}">{{ $day }} ({{ date("g:ia", strtotime($item->from)).'-'.date("g:ia", strtotime($item->to)) }})</option>')
-                }
-            @endforeach
-        })
-    </script>
 @endsection
