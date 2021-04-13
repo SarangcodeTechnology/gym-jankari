@@ -15,7 +15,7 @@ class BlogsController extends Controller
      */
     public function index()
     {
-        $blogs = Page::orderBy('created_at','desc')->get();
+        $blogs = Page::orderBy('created_at','desc')->where('status','ACTIVE')->get();
         return view('blogs.lists',compact('blogs'));
     }
 

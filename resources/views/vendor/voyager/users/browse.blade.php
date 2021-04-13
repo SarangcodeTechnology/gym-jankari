@@ -76,9 +76,6 @@
                                 <thead>
                                     <tr>
                                         @foreach($dataType->browseRows as $row)
-                                            @if($loop->iteration==2)
-                                                <th>Image</th>
-                                            @endif
                                         <th>
                                             @if ($isServerSide && $row->type !== 'relationship')
                                                 <a href="{{ $row->sortByUrl($orderBy, $sortOrder) }}">
@@ -96,16 +93,11 @@
                                             @endif
                                         </th>
                                         @endforeach
-                                        <th>
-                                            Payment Amount
-                                        </th>
-                                        <th>Days Remaining</th>
-                                        <th>Payment Status</th>
                                         <th class="actions text-right dt-not-orderable">{{ __('voyager::generic.actions') }}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($dataTypeContent->where('status',1) as $data)
+                                    @foreach($dataTypeContent as $data)
                                     <tr>
                                         @foreach($dataType->browseRows as $row)
                                             @php
@@ -113,14 +105,11 @@
                                                 $data->{$row->field} = $data->{$row->field.'_browse'};
                                             }
                                             @endphp
-                                            @if($loop->iteration==2)
-                                                <td><img src="{{ Voyager::image(\App\Models\User::find($data->user_id)->avatar) }}" style="width:100px" alt=""></td>
-                                             @endif
                                             <td>
                                                 @if (isset($row->details->view))
                                                     @include($row->details->view, ['row' => $row, 'dataType' => $dataType, 'dataTypeContent' => $dataTypeContent, 'content' => $data->{$row->field}, 'action' => 'browse', 'view' => 'browse', 'options' => $row->details])
                                                 @elseif($row->type == 'image')
-                                                    <img src="@if( !filter_var($data->{$row->field}, FILTER_VALIDATE_URL)){{ Voyager::image( $data->{$row->field} ) }}@else{{ $data->{$row->field} }}@endif" style="width:100px">
+                                                    <img src="{{ Voyager::image($data->{$row->field}) }}" style="width:100px">
                                                 @elseif($row->type == 'relationship')
                                                     @include('voyager::formfields.relationship', ['view' => 'browse','options' => $row->details])
                                                 @elseif($row->type == 'select_multiple')
@@ -243,40 +232,11 @@
                                                         {{ trans_choice('voyager::media.files', 0) }}
                                                     @endif
                                                 @else
-                                                    @if($row->field=='user_id')
-                                                        {{ \App\Models\User::find($data->user_id)->name }}
-                                                    @elseif($row->field=='package_id')
-                                                         {{ \App\Package::find($data->package_id)->title }}
-                                                    @else
                                                     @include('voyager::multilingual.input-hidden-bread-browse')
                                                     <span>{{ $data->{$row->field} }}</span>
-                                                    @endif
                                                 @endif
                                             </td>
                                         @endforeach
-                                        <td>Rs. {{  \App\Package::where('id',$data->package_id)->first()->{$data->duration.'_price'} }}</td>
-                                        @php
-                                        date_default_timezone_set('Asia/Kathmandu');
-                                        $todayDate = strtotime(date("Y-m-d"));
-                                        $expiryDate = strtotime($data->expiry_date);
-                                        $remainingDays = ($expiryDate - $todayDate)/60/60/24;
-                                        @endphp
-                                        <td>{{ $remainingDays }}</td>
-                                        <td>
-                                            @if($remainingDays<=7 && $remainingDays>0)
-                                            <span style="color: #f4a62a; font-weight:800">
-                                            Package Expiring Soon
-                                            </span>
-                                            @elseif($remainingDays>7)
-                                            <span style="color: green; font-weight:800">
-                                                Package Activated
-                                            </span>
-                                            @else
-                                            <span style="color: red; font-weight:800">
-                                                Package Expired
-                                            </span>
-                                            @endif
-                                        </td>
                                         <td class="no-sort no-click bread-actions">
                                             @foreach($actions as $action)
                                                 @if (!method_exists($action, 'massAction'))

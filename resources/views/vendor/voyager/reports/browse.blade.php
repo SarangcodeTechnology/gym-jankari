@@ -59,7 +59,13 @@
                                     <div style="margin-left:5px">
                                         <input class="form-control" type="text" id="toCustomDate" name="to" value="{{ request('to') ?? $todayDate }}"  data-select="datepicker" required>
                                     </div>
-                                    <span><button type="submit">Generate</button></span>
+                                    <select id="package" class="form-control" name="package">
+                                        <option value="-1">All</option>
+                                        @foreach (\App\Package::all() as $item)
+                                            <option {{ request('package') ? ( $item->id==request('package') ? 'selected' : '' ) : '' }} value="{{ $item->id }}">{{ $item->title }}</option>
+                                        @endforeach
+                                    </select>
+                                    <span><button class="btn btn-success" type="submit">Search</button></span>
                                 </div>
                             </form>
                         </div>
@@ -68,7 +74,9 @@
                                 <table class="table table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th style="width: 100%"><strong>Trainee</strong></th>
+                                            <th>Image</th>
+                                            <th><strong>Trainee</strong></th>
+                                            <th>Package</th>
                                             <th><strong>Total Days Attended</strong></th>
                                         </tr>
                                     </thead>
@@ -78,11 +86,18 @@
                                             @php
                                                 $userID = $item->id;
                                                 $attendanceCount = \App\Attendance::where('user_id',$userID)->where('date','>=',request('from'))->where('date','<=',request('to'))->get()->count();
+                                                $payment =  $item->firstPaymentDate($item->id);
+                                                $package = request('package') ? ($payment ?  ($payment->package->id==request('package') ? 1 : 0) : 0) : 1;
+                                                $package = request('package') == -1 ? 1 : $package;
                                             @endphp
+                                            @if($package)
                                             <tr>
+                                                <td class="custom-image"><img src="{{ Voyager::image($item->avatar)}}" alt=""></td>
                                                 <td>{{ $item->name }}</td>
+                                                <td>{{ $payment ? $payment->package->title : "No Recent Package" }}</td>
                                                 <td style="display: flex; justify-content:center">{{ $attendanceCount }}</td>
                                             </tr>
+                                            @endif
                                         @endforeach
                                         @endif
 
@@ -91,20 +106,7 @@
                                 </table>
                             </div>
                         </div>
-                        {{-- <form id="dateForm" method="get">
-                            <div style="display: flex; align-items: center;">
-                                <div>
-                                    <input class="form-control" type="text" class="customDate" name="from" placeholder="from" data-select="datepicker" readonly>
-                                </div>
-                                <div>
-                                    <input class="form-control" type="text" class="customDate" name="to" placeholder="to" data-select="datepicker">
-                                </div>
-                                <div>
-                                    <button type="submit" class="btn btn-success">Generate Report</button>
-                                </div>
-                            </div>
 
-                        </form> --}}
 
                     </div>
                 </div>
@@ -119,7 +121,17 @@
 @endif
 
 <link href="/css/jquery.datepicker2.css" rel="stylesheet">
-
+<style>
+    .custom-image{
+        width: 80px;
+        height: 80px;
+    }
+    .custom-image img{
+        height: 100%;
+        widows: 100%;
+        object-fit: contain;
+    }
+    </style>
 @stop
 
 @section('javascript')

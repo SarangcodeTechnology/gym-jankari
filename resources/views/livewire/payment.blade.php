@@ -55,12 +55,14 @@
                                 </div>
                             </div>
                         </li>
+                        @if($package!=-1)
                         <div class="pay-buttons">
                             <button wire:click="submit" class="btn btn-success mt-2 mr-2"><img class="esewa" src="/assets/img/esewa.ico" alt=""> Pay With Esewa</button>
                             <button wire:click="submit" class="btn btn-primary mt-2 mr-2"><img class="esewa" src="/assets/img/paypal.png" alt="">  Pay With Paypal</button>
                             <button wire:click="submit" class="btn btn-secondary mr-2 mt-2"><img class="esewa" src="/assets/img/khalti.png" alt="">  Pay With Khalti</button>
                             <button wire:click="submit" class="btn btn-info mt-2"><img class="esewa" src="/assets/img/pay-with-cash.png" alt="">  Pay</button>
                         </div>
+                        @endif
                     </ul>
                 </div>
             </div>

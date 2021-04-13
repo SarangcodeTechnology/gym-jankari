@@ -1,5 +1,20 @@
 @extends('layout.app')
 
+@section('css')
+<style>
+    .my-image{
+        height: 116px;
+        width: 100px;
+        border: 1px rgb(202, 202, 202) solid;
+    }
+    .my-image img{
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+</style>
+@endsection
+
 @section('body')
     @php
       $user = Auth::user();
@@ -21,7 +36,11 @@
                 <div class="card custom-card">
                     <div class="card-body">
                         <div class="basic-details">
-                            <h5 class="card-title">{{ $user->name }} <span>{{ isset($remainingDays) ? $remainingDays : 0 }} days remaining</span></h5>
+                            <div class="my-image mb-3">
+                                <img src="{{ Voyager::image($user->avatar) }}" alt="">
+                            </div>
+                            <h5 class="card-title">{{ $user->name }}</h5>
+                            <span>{{ isset($remainingDays) ? $remainingDays : 0 }} days remaining</span>
                             <p class="card-text">{{ $user->gender }}</p>
                             <p class="card-text">DOB: {{ $user->dob }}</p>
                         </div>
@@ -168,9 +187,9 @@
 
     </div>
     @else
-    <div class="container">
+    <div class="container mb-4" >
         <p>Payment not Activated</p>
-        <a href="/payment">Pay</a>
+        <a class="btn btn-primary" href="/payment">Pay</a>
     </div>
     @endif
 

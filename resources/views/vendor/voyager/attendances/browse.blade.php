@@ -52,13 +52,23 @@
                             }
                         @endphp
                         <div class="info-box" style="display: flex; align-items:center;">
-                            <form id="dateForm" method="get">
-                                <div style="display: flex; align-items: center;">
-                                    <div>
+                            <form style="display: flex" id="dateForm" method="get">
+                                <div class="form-group col-6">
+                                        <label for="date">Date</label>
                                         <input class="form-control" type="text" id="customDate" name="date" value="{{ request('date') ?? $todayDate }}" data-select="datepicker">
-                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="package">Package</label>
+                                    <select id="package" class="form-control" name="package">
+                                        <option value="-1">All</option>
+                                        @foreach (\App\Package::all() as $item)
+                                            <option {{ request('package') ? ( $item->id==request('package') ? 'selected' : '' ) : '' }} value="{{ $item->id }}">{{ $item->title }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </form>
+
+
                             <span style="padding-left: 5px;
                             font-size: 16px;
                             font-weight: 600;
@@ -69,7 +79,9 @@
                                 <table class="table table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th style="width: 100%"><strong>Trainee</strong></th>
+                                            <th>Image</th>
+                                            <th><strong>Trainee</strong></th>
+                                            <th><strong>Package</strong></th>
                                             <th><strong>Attendance</strong></th>
                                         </tr>
                                     </thead>
@@ -84,13 +96,22 @@
                                                else{
                                                    $paymentDate = 0;
                                                }
+
                                             @endphp
                                             @if($paymentDate)
-                                               @if($date > $paymentDate)
-                                                <tr>
-                                                    <td>{{ $item->name }}</td>
-                                                    <td style="display: flex; justify-content:center"><input type="checkbox" id="user{{ $item->id }}" onclick="attendUser('{{ $item->id }}')" {{ checkUser($item->id) }}></td>
-                                                </tr>
+                                               @if($date >= $paymentDate )
+
+                                                    @php $package = request('package') ? (request('package')==$payment->package->id ? 1 : 0) : 1;
+                                                        $package = request('package')==-1 ? 1 : $package;
+                                                    @endphp
+                                                    @if($package)
+                                                        <tr>
+                                                            <td class="custom-image"><img src="{{ Voyager::image($item->avatar) }}" alt=""></td>
+                                                            <td style="padding-top: 28px;">{{ $item->name }}</td>
+                                                            <td style="padding-top: 28px;">{{ $payment->package->title }}</td>
+                                                            <td style="display: flex; justify-content:center; padding-top:28px"><input type="checkbox" id="user{{ $item->id }}" onclick="attendUser('{{ $item->id }}')" {{ checkUser($item->id) }}></td>
+                                                        </tr>
+                                                    @endif
                                                 @endif
                                             @endif
                                             {{-- @endif --}}
@@ -129,7 +150,17 @@
 @endif
 
 <link href="/css/jquery.datepicker2.css" rel="stylesheet">
-
+<style>
+    .custom-image{
+        width: 80px;
+        height: 80px;
+    }
+    .custom-image img{
+        height: 100%;
+        widows: 100%;
+        object-fit: contain;
+    }
+    </style>
 @stop
 
 @section('javascript')
@@ -139,6 +170,10 @@
 
         $('#customDate').prop("readonly", true);
         $('.customDate').prop("readonly", true);
+
+        $('#package').change(function(){
+                $('#dateForm').submit();
+        });
 
         function attendUser(id){
             var checked = $('#user'+id).prop('checked')==true ? 1 : 0;

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -35,6 +36,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 Auth::routes();
 
+Route::post('/custom-register',[RegisterController::class,'create']);
 Route::post('/reset',[ResetController::class,'reset'])->name('reset.mypassword');
 Route::get('/changepassword',[ResetController::class,'changepassword']);
 Route::post('/changepassword',[ResetController::class,'password']);

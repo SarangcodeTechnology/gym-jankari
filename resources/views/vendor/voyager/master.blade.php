@@ -43,6 +43,12 @@
         .voyager .breadcrumb a{
             color:{{ config('voyager.primary_color','#22A7F0') }};
         }
+        .voyager .side-menu.sidebar-inverse .navbar li>a {
+            color: #e6e6e6;
+        }
+        .voyager .side-menu.sidebar-inverse .navbar li.active{
+            background: #2e3e58;
+        }
     </style>
 
     @if(!empty(config('voyager.additional_css')))<!-- Additional CSS -->

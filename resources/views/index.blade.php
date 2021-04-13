@@ -23,7 +23,22 @@
     </section><!-- End Hero -->
 
     <main id="main">
-
+        <!-- Corona Dialog -->
+        <div class="modal fade" id="coronaDialog" tabindex="-1" aria-labelledby="coronaDialogLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="coronaDialogLabel">Dialog title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda ducimus in sapiente quia, perspiciatis tenetur ullam ipsam tempora obcaecati fugit eum corporis minus cupiditate delectus ea vel, nemo culpa. Nesciunt ea maiores sapiente fugiat optio pariatur quaerat delectus corporis necessitatibus. A fuga cupiditate ab quod nam, voluptatibus aspernatur, modi at repellat voluptate eveniet tempora autem labore culpa itaque laborum dignissimos exercitationem ullam minus, enim similique nemo optio doloribus. Inventore debitis dolore nemo deleniti, excepturi quo quasi animi cupiditate fugit blanditiis tempore minima sapiente ipsam alias, quaerat adipisci voluptates, cum nostrum placeat est quam labore culpa libero mollitia. Temporibus rerum sunt quam saepe doloremque, modi nostrum. Unde temporibus aliquid mollitia atque vel expedita ex soluta molestias ratione consectetur velit ab dolorum nostrum eum beatae ut voluptas sit illum quod nihil dolorem, iusto, harum quos. Ad mollitia quas, debitis sapiente quasi, aliquam numquam placeat eligendi hic corporis temporibus voluptatum. Libero voluptates est veritatis molestias? Rerum beatae in eligendi ipsam, voluptate aspernatur unde laboriosam sapiente nihil accusamus quae impedit provident dolorum repellendus, voluptas at quas odit sit maiores! Placeat velit sit dolore maxime quisquam deleniti consequatur sint labore non nulla! Amet, quos! Optio molestias aliquid fuga voluptatem fugit mollitia rerum autem. Animi officia corporis sint distinctio ipsum autem, est laudantium dignissimos, delectus veritatis quam ad possimus culpa molestiae ea rerum doloribus, accusamus sunt earum quia veniam praesentium neque. Saepe aspernatur consectetur tempora corrupti corporis ipsam voluptatem! Nulla dolores maiores vitae architecto corrupti animi quod facilis magnam dolorum saepe. Saepe, eius repellat voluptate perferendis doloremque provident facilis expedita ad dolorem praesentium maiores sequi eligendi odit sit pariatur quisquam! Tempora voluptatum possimus minus quia soluta nesciunt nisi, dolorem reiciendis dolorum voluptate beatae natus, quos illum fugit dolor autem quod architecto iste earum, eligendi quisquam. Quia nihil, placeat eos fuga numquam corrupti, at deserunt amet quam nesciunt optio accusamus adipisci ipsa voluptatem esse temporibus! Tempore optio expedita nulla placeat veniam commodi, minima, error ipsa quasi possimus dignissimos sit. Quod repellendus vel maxime esse dignissimos pariatur quae incidunt tenetur atque facilis obcaecati sunt aut, sit quidem culpa quasi rerum in. Delectus pariatur reprehenderit suscipit sed laborum explicabo dignissimos ratione sequi quam fugit similique molestias nemo, perspiciatis impedit molestiae illo, odit corrupti neque aliquid vero temporibus tempore repellat nobis? Deserunt iusto a ea aspernatur, fugit repellat alias nisi quidem perspiciatis error impedit pariatur totam consequuntur, commodi cum! Corrupti harum accusamus nam quo amet nostrum incidunt recusandae at id!
+                </div>
+            </div>
+            </div>
+        </div>
         <!-- ======= About Us Section ======= -->
         <section id="about" class="about">
             <div class="container">
@@ -171,4 +186,12 @@
             </div>
         </section>
     </main><!-- End #main -->
+@endsection
+
+@section('script')
+<script type="text/javascript">
+    $(window).on('load', function() {
+        $('#coronaDialog').modal('show');
+    });
+</script>
 @endsection

@@ -33,7 +33,8 @@ class User extends \TCG\Voyager\Models\User
         'emergency_contact',
         'health_condition',
         'package_id',
-        'schedule_id'
+        'schedule_id',
+        'image'
     ];
 
     /**

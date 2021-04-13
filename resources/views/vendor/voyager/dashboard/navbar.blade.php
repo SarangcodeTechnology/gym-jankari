@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top navbar-top" style="background: #3ea7f0;
+<nav class="navbar navbar-default navbar-fixed-top navbar-top" style="background: #3c4d6b;
 height: 61px;">
     <div class="container-fluid">
 
